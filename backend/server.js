@@ -30,7 +30,7 @@ app.listen(PORT, () => {
 
 // Add routes to the endpoints
 
-const Article = require('./models/Article');
+const Article = require('./models/Articles');
 
 app.get('/articles', async (req, res) => {
   try {
