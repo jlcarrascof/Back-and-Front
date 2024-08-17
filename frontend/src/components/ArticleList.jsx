@@ -18,16 +18,21 @@ const ArticleList = () => {
       });
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <p className="text-center text-lg">Loading...</p>;
+  if (error) return <p className="text-center text-red-500">{error}</p>;
 
   return (
-    <div>
-      <h1>Articles</h1>
-      <ul>
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Articles</h1>
+      <ul className="space-y-4">
         {articles.map(article => (
-          <li key={article._id}>
-            <a href={article.url} target="_blank" rel="noopener noreferrer">
+          <li key={article._id} className="bg-white p-4 rounded-lg shadow-md">
+            <a
+              href={article.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:underline"
+            >
               {article.title}
             </a>
           </li>
