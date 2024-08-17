@@ -20,3 +20,13 @@ mongoose.connect(process.env.MONGODB_URI, {
 })
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('Error to connecto to MongoDB', err));
+
+// Routes
+app.get('/', (req, res) => {
+  res.send('Articles API');
+});
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
