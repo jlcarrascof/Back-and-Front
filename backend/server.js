@@ -27,3 +27,16 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+// Add routes to the endpoints
+
+const Article = require('./models/Article');
+
+app.get('/articles', async (req, res) => {
+  try {
+    const articles = await Article.find();
+    res.json(articles);
+  } catch (err) {
+    res.status(500).json({ message: 'Error trying to get the articles' });
+  }
+});
