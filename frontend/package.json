@@ -9,8 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-    "overrides": {
-    "glob": ">=10.5.0"
+  "overrides": {
+    "glob": ">=10.5.0",
+    "esbuild": ">=0.24.3"
   },
   "dependencies": {
     "axios": "^1.7.4",
